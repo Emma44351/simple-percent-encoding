@@ -1,0 +1,17 @@
+{
+  "name": "simple-percent-encoding",
+  "version": "0.1.0",
+  "description": "Encode and decode arbitrary strings into a URL-safe percent-escaped form using UTF-8 bytes.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "BSD-3-Clause",
+  "dependencies": {}
+}
