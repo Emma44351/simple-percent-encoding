@@ -34,3 +34,10 @@ Percent-decoding can produce bytes that are not valid UTF-8. This library decode
 `TextDecoder` in non-fatal mode, so an invalid byte such as `%FF` becomes the Unicode replacement
 character `U+FFFD` rather than throwing. If you need to reject malformed input, check the decoded
 string for `\uFFFD` or use a stricter decoder.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
